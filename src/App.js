@@ -8,16 +8,21 @@ export default function App (){
     const[ movie, setMovie ] = useState(null);
     
     const getMovie = async (searchTerm) => {
-        const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`);
-        const data = await response.json();
-        setMovie(data);
+        try {
+            const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&t=${searchTerm}`);
+            const data = await response.json();
+            setMovie(data);
+        } 
+        catch (error) {
+            console.error(error);
+        }
     }
     
 
     return (
         <>
-            <MovieDisplay />
-            <Form />
+            <MovieDisplay movie={movie} />
+            <Form movieSearch={getMovie}/>
         </>
     ) 
 }
