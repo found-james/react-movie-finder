@@ -15,7 +15,7 @@ export default function Form ( props ) {
       };
 
     return (
-        <>
+        <section>
             <form onSubmit={handleSubmit}>
                 <input 
                 type="text" 
@@ -26,6 +26,6 @@ export default function Form ( props ) {
                 
                 <input type='submit' value='search for movie' />
             </form>
-        </>
+        </section>
     )
 }

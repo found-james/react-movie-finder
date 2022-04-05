@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaGithub } from "react-icons/fa";
 import Form from './components/Form.js'
 import MovieDisplay from './components/MovieDisplay.js';
 
@@ -21,8 +22,11 @@ export default function App (){
 
     return (
         <>
-            <MovieDisplay movie={movie} />
             <Form movieSearch={getMovie}/>
+            <MovieDisplay movie={movie} />
+            <footer>
+                <a href="https://github.com/jayworks2318"><FaGithub /></a>
+            </footer>
         </>
     ) 
 }
